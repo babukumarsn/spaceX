@@ -1,0 +1,32 @@
+<div class="section">
+
+    <div class="filter-container">
+        <div class="title">Filters</div>
+
+        <div class="filter-section">
+            <div class="sub-title">Lunch Year</div>
+            <div class="button-section">
+                <span (click)="onSelectYear(item)" *ngFor="let item of listOfYears"
+                    [class.selected]="queryParam.year == item">
+                    {{item}}
+                </span>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="sub-title">Successful Launch</div>
+            <div class="button-section">
+                <span [class.selected]="queryParam.launch == 'true'" (click)="onSelectLanuch('true')">True</span>
+                <span [class.selected]="queryParam.launch == 'false'" (click)="onSelectLanuch('false')">False</span>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <div class="sub-title">Successful Landing</div>
+            <div class="button-section">
+                <span [class.selected]="queryParam.landing == 'true'" (click)="onSelectLanding('true')">True</span>
+                <span [class.selected]="queryParam.landing == 'false'" (click)="onSelectLanding('false')">False</span>
+            </div>
+        </div>
+    </div>
+</div>
